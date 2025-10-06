@@ -35,12 +35,12 @@ jobs:
           npm run build -- --base-href "/${{ github.event.repository.name }}/" --output-path dist
 
       - name: Add SPA 404 redirect
-        run: cp dist/index.html dist/404.html
+        run: cp dist/browser/index.html dist/browser/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/browser
 
   deploy:
     needs: build

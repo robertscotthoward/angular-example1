@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" ng-app="demoApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AngularJS No-Build Demo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+  <script src="./app.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    nav { display: flex; gap: 12px; margin-bottom: 16px; }
+    a { text-decoration: none; color: #0b66d6; padding: 6px 10px; border-radius: 6px; }
+    a.active { background: #e8f1ff; }
+    .view { border: 1px solid #ddd; border-radius: 8px; padding: 16px; }
+  </style>
+</head>
+<body>
+  <h1>AngularJS Demo (No Build)</h1>
+
+  <nav>
+    <a href="#!/one" ng-class="{active: isActive('/one')}">One</a>
+    <a href="#!/two" ng-class="{active: isActive('/two')}">Two</a>
+    <a href="#!/three" ng-class="{active: isActive('/three')}">Three</a>
+  </nav>
+
+  <div class="view" ng-view></div>
+
+  <!-- Inline templates so this works when opened directly from disk -->
+  <script type="text/ng-template" id="/one.html">
+    <h2>Page One</h2>
+    <p>This HTML is loaded dynamically via the router.</p>
+  </script>
+
+  <script type="text/ng-template" id="/two.html">
+    <h2>Page Two</h2>
+    <ul>
+      <li>Item A</li>
+      <li>Item B</li>
+      <li>Item C</li>
+    </ul>
+  </script>
+
+  <script type="text/ng-template" id="/three.html">
+    <h2>Page Three</h2>
+    <p>You can replace this with any HTML snippet you like.</p>
+  </script>
+</body>
+</html>
+
+
+
