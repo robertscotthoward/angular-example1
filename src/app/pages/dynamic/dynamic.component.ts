@@ -14,7 +14,7 @@ export class DynamicComponent {
   items: Array<{ title: string; description: string }> = [];
 
   constructor() {
-    this.http.get<Array<{ title: string; description: string }>>('/assets/content.json')
+    this.http.get<Array<{ title: string; description: string }>>('assets/content.json')
       .subscribe(data => {
         this.items = data ?? [];
       });

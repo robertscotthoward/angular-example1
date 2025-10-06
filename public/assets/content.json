@@ -1,8 +1,6 @@
 [
   { "title": "First Item", "description": "This item was loaded from a static JSON file." },
   { "title": "Second Item", "description": "Angular fetched this at runtime from /assets." },
-  { "title": "Third Item", "description": "You can edit assets/content.json to change this list." }
+  { "title": "Third Item", "description": "You can edit public/assets/content.json to change this list." }
 ]
-
-
 
